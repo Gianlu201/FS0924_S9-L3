@@ -4,3 +4,7 @@
   right: 5px;
   text-transform: capitalize;
 }
+
+.card.selected {
+  border: 3px solid red;
+}

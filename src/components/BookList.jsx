@@ -29,7 +29,12 @@ class BookList extends Component {
     return (
       <>
         <Container className='mt-3'>
-          <Form>
+          <Form
+            onSubmit={(e) => {
+              e.preventDefault();
+              // this.setState({ search: '' });
+            }}
+          >
             <Form.Group className='mb-3'>
               <Form.Control
                 type='text'
