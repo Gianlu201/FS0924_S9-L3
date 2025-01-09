@@ -6,7 +6,7 @@ import fantasyBooks from '../data/fantasy.json';
 
 const MyMain = function () {
   return (
-    <main className='bg-body-secondary pt-2 pb-3'>
+    <main className='bg-body-secondary pt-2 pb-3 flex-grow-1'>
       <Container>
         <Welcome />
         {/* <AllTheBooks /> */}
