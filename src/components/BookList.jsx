@@ -2,13 +2,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import SingleBook from './SingleBook';
 import { Component } from 'react';
+
+import fantasyBooks from '../data/fantasy.json';
+import historyBooks from '../data/history.json';
+import horrorBooks from '../data/horror.json';
+import romanceBooks from '../data/romance.json';
+import scifiBooks from '../data/scifi.json';
 
 class BookList extends Component {
   state = {
     search: '',
   };
+
+  books = fantasyBooks;
 
   updateFormControl(e) {
     this.setState({ search: e.target.value });
@@ -17,7 +26,7 @@ class BookList extends Component {
   }
 
   updateBooksFound() {
-    this.booksFound = this.props.books.filter(
+    this.booksFound = this.books.filter(
       (book) => book.title.toLowerCase().indexOf(this.state.search) >= 0
     );
   }
@@ -47,6 +56,68 @@ class BookList extends Component {
             </Form.Group>
           </Form>
         </Container>
+
+        <div className='d-flex justify-content-center gap-3 mt-3 mb-4'>
+          <Button
+            type='button'
+            variant='info'
+            onClick={() => {
+              this.books = fantasyBooks;
+              this.updateBooksFound();
+              this.forceUpdate();
+            }}
+          >
+            Fantasy
+          </Button>
+
+          <Button
+            type='button'
+            variant='info'
+            onClick={() => {
+              this.books = historyBooks;
+              this.updateBooksFound();
+              this.forceUpdate();
+            }}
+          >
+            History
+          </Button>
+
+          <Button
+            type='button'
+            variant='info'
+            onClick={() => {
+              this.books = horrorBooks;
+              this.updateBooksFound();
+              this.forceUpdate();
+            }}
+          >
+            Horror
+          </Button>
+
+          <Button
+            type='button'
+            variant='info'
+            onClick={() => {
+              this.books = romanceBooks;
+              this.updateBooksFound();
+              this.forceUpdate();
+            }}
+          >
+            Romance
+          </Button>
+
+          <Button
+            type='button'
+            variant='info'
+            onClick={() => {
+              this.books = scifiBooks;
+              this.updateBooksFound();
+              this.forceUpdate();
+            }}
+          >
+            Scifi
+          </Button>
+        </div>
 
         <Row>
           {this.booksFound.length === 0 && (

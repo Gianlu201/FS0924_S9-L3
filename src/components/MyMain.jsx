@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Welcome from './Welcome';
 // import AllTheBooks from './AllTheBooks';
 import BookList from './BookList';
-import fantasyBooks from '../data/fantasy.json';
+// import fantasyBooks from '../data/fantasy.json';
 
 const MyMain = function () {
   return (
@@ -10,7 +10,7 @@ const MyMain = function () {
       <Container>
         <Welcome />
         {/* <AllTheBooks /> */}
-        <BookList books={fantasyBooks} />
+        <BookList />
       </Container>
     </main>
   );
