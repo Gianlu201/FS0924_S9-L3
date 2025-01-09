@@ -1,0 +1,16 @@
+a:link,
+a:visited {
+  color: #c7c8c9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-inline-start: 10px;
+}

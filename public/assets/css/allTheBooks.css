@@ -1,0 +1,6 @@
+.card .badge {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  text-transform: capitalize;
+}
